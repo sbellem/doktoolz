@@ -2,7 +2,7 @@ FROM ubuntu:15.04
 
 MAINTAINER Sylvain Bellemare <sbellem@gmail.com>
 
-RUN apt-get update && apt-get install -y texlive
+RUN apt-get update && apt-get install -y texlive texlive-latex-extra
 RUN apt-get install -y pandoc
 RUN apt-get install -y context
 
