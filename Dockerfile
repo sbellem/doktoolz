@@ -1,13 +1,16 @@
-FROM ubuntu:15.10
+FROM python:3.5
 
 MAINTAINER Sylvain Bellemare <sbellem@gmail.com>
 
 RUN apt-get update && apt-get install -y texlive texlive-latex-extra
 RUN apt-get install -y pandoc
 RUN apt-get install -y context
+RUN apt-get install -y graphviz
 
-RUN apt-get install -y build-essential python-dev python-pip
+RUN pip install --upgrade pip
 RUN pip install sphinx hieroglyph
 
-VOLUME /docs
-WORKDIR /docs
+RUN mkdir -p /usr/src/docs
+
+VOLUME /usr/src/docs
+WORKDIR /usr/src/docs
